@@ -230,6 +230,7 @@ def Q_2(conn, execution_time):
     WHERE matches.season_id = 90 AND
 	matches.competition_id = 11
     GROUP BY players.player_name
+    HAVING COUNT(*) > 0
     ORDER BY shot_count DESC;
     """
 
@@ -343,6 +344,7 @@ def Q_5(conn, execution_time):
     WHERE matches.season_id = 44 AND
 	matches.competition_id = 2
     GROUP BY players.player_name
+    HAVING COUNT(*) > 0
     ORDER BY times_pass_recipient DESC;
     """
 
@@ -380,6 +382,7 @@ def Q_6(conn, execution_time):
     WHERE matches.season_id = 44 AND
 	matches.competition_id = 2
     GROUP BY teams.team_name
+    HAVING COUNT(*) > 0
     ORDER BY num_shots DESC;
     """
 
@@ -417,6 +420,7 @@ def Q_7(conn, execution_time):
 	matches.competition_id = 11 AND
     passes.through_ball
     GROUP BY players.player_name
+    HAVING COUNT(*) > 0
     ORDER BY num_through_balls DESC;
     """
 
@@ -455,6 +459,7 @@ def Q_8(conn, execution_time):
 	matches.competition_id = 11 AND
     passes.through_ball
     GROUP BY teams.team_name
+    HAVING COUNT(*) > 0
     ORDER BY num_through_balls DESC;
     """
 
@@ -490,6 +495,7 @@ def Q_9(conn, execution_time):
     WHERE matches.season_id IN (90, 42, 4) AND
 	matches.competition_id = 11
     GROUP BY players.player_name
+    HAVING COUNT(*) > 0
     ORDER BY num_dribbles DESC;
     """
 
@@ -525,6 +531,7 @@ def Q_10(conn, execution_time):
     WHERE matches.season_id = 90 AND
 	matches.competition_id = 11
     GROUP BY players.player_name
+    HAVING COUNT(*) > 0
     ORDER BY times_dribbled_past ASC;
     """
 
